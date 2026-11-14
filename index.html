@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=d673b28d-3a40-44ae-b328-40d72ed48b3a
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نظام الجودة — شركة سنام الرائدة</title>
+<meta name="description" content="نظام إدارة الجودة لشركة سنام الرائدة، المشغلة لمطاعم شركة حاشي باشا">
+<meta name="theme-color" content="#6E1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="نظام الجودة">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=170">
+</head>
+<body>
+
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img class="brand-logo" id="brandLogo" src="assets/brand/snam-logo-gold.png" alt="شعار شركة سنام">
+      <div class="brand-text">
+        <span id="brandTagline">المشغلة لمطاعم شركة حاشي باشا</span>
+        <em id="brandService">نظام الجودة</em>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar-foot">
+      <div class="compliance-mini">
+        <span>الامتثال العام</span>
+        <strong id="sideScore" dir="ltr">—</strong>
+        <div class="mini-bar"><i id="sideBar" style="width:0%"></i></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" data-action="reset-demo">إعادة تعيين البيانات</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" data-action="toggle-sidebar" aria-label="القائمة">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="page-id">
+        <h1 id="pageTitle">لوحة المؤشرات</h1>
+        <p id="pageSub">نظرة شاملة على أداء الجودة في الفروع</p>
+      </div>
+
+      <div class="topbar-tools">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="globalSearch" type="search" placeholder="ابحث عن فرع أو ملاحظة…" aria-label="بحث">
+          <kbd>⌘K</kbd>
+        </div>
+        <button class="icon-btn" data-action="notify" aria-label="التنبيهات">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18 15V10a6 6 0 10-12 0v5l-1.5 2.5h15L18 15Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 19a2 2 0 004 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <b class="dot" id="notifDot"></b>
+        </button>
+        <button class="icon-btn only-mobile" data-action="open-search" aria-label="بحث">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" data-action="change-pass" title="تغيير كلمة المرور" aria-label="تغيير كلمة المرور">
+          <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 12h9M18 12v3M15 12v2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" data-action="logout" title="تسجيل الخروج" aria-label="تسجيل الخروج">
+          <svg viewBox="0 0 24 24" width="19" height="19"><path d="M15 4h4a1 1 0 011 1v14a1 1 0 01-1 1h-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M10 8l-4 4 4 4M6 12h9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" data-action="my-signature" title="توقيعي الإلكتروني" style="margin-inline-end:6px">
+          <svg viewBox="0 0 24 24" width="19" height="19"><path d="M3 17c4 0 5-9 9-9 2 0 2 3 4 3s3-2 5-2M4 21h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="user">
+          <div class="avatar" id="userAvatar">ع</div>
+          <div class="user-text">
+            <strong id="userName">عبدالله</strong>
+            <span id="userRole">مدير الجودة</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> شركة سنام الرائدة — نظام الجودة الداخلي</span>
+      <span class="foot-sep">•</span>
+      <span>الإصدار 1.1</span>
+    </footer>
+  </div>
+</div>
+
+<div class="side-backdrop" id="sideBackdrop" hidden></div>
+
+<nav class="tabbar" id="tabbar" aria-label="التنقل السريع"></nav>
+
+<div class="overlay" id="overlay" hidden></div>
+<div class="modal-host" id="modalHost" hidden></div>
+<aside class="drawer" id="drawer" hidden></aside>
+<div class="toasts" id="toasts"></div>
+
+<script src="assets/vendor/qrcode.js"></script>
+<script src="assets/seed.js?v=170"></script>
+<script src="assets/app.js?v=170"></script>
+</body>
+</html>
